@@ -47,7 +47,6 @@
   .letter-content p { font-size:1.12rem; margin-bottom:20px; color:var(--text); }
   .letter-content p em { font-family:'Playfair Display', serif; font-size:1.2rem; color:var(--gold); }
 
-  /* Birthday Surprise Box */
   .bday-box {
     background: linear-gradient(135deg, #171412, #241918);
     border: 1px solid var(--gold);
@@ -89,7 +88,6 @@
   #bdayMessage p { color: var(--text); font-size: 1.05rem; margin-bottom: 15px; line-height: 1.8; }
   #bdayMessage p:last-child { margin-bottom: 0; }
 
-  /* Exam Box */
   .exam-box {
     background: var(--card-bg);
     border: 1px solid var(--border);
@@ -122,7 +120,6 @@
     padding: 0 15px;
   }
 
-  /* Balloon Animation Elements */
   .balloon-container {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
@@ -180,7 +177,6 @@
     <p>Crushing your exams, aging with incredible grace, and bringing pure joy into my life.</p>
   </header>
 
-  <!-- Letter Card -->
   <div class="letter-card">
     <div class="letter-content">
       <p>Dear Sintia 👻,</p>
@@ -189,7 +185,6 @@
     </div>
   </div>
 
-  <!-- Interactive Birthday Surprise Box -->
   <div class="bday-box" id="bdayContainer">
     <div class="balloon-container" id="balloonContainer"></div>
     <h3>🎉 Tap for Your Birthday Surprise! 🎂</h3>
@@ -204,7 +199,6 @@
     </div>
   </div>
 
-  <!-- Exam Boost Box -->
   <div class="exam-box">
     <h3>📚 Exam Mode & Study Break 👻</h3>
     <p>Take a tiny study break and tap below for a quick boost of confidence.</p>
@@ -216,7 +210,6 @@
     <div class="fun-output" id="examOutput">Click a button for a sweet study boost!</div>
   </div>
 
-  <!-- Messaging Form Section -->
   <div class="message-form-container">
     <h3>Send a Note to My Heart 💌</h3>
     <p>Type your thoughts right here. When you hit send, it flies straight to my inbox across the miles.</p>
@@ -246,7 +239,6 @@
     balloonBox.style.display = 'block';
     balloonBox.innerHTML = '';
 
-    // Generate floating birthday balloons and hearts
     const symbols = ['🎈', '💖', '👻', '✨', '🎂', '🎉'];
     for (let i = 0; i < 20; i++) {
       const span = document.createElement('span');
