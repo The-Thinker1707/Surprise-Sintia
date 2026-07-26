@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Sintia 👻💖 — You've Got This!</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
+
+  :root{
+    --bg:#0c0a09;
+    --card-bg:#171412;
+    --border:#29221e;
+    --text:#f5f2eb;
+    --muted:#a39b90;
+    --rose:#e0566fd;
+    --gold:#e2b761;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Plus Jakarta Sans', sans-serif;
+    font-weight:300;
+    line-height:1.7;
+    overflow-x:hidden;
+  }
+  
+  .wrap{ max-width:750px; margin:0 auto; padding:40px 24px; }
+  h1, h2, h3 { font-family:'Playfair Display', serif; font-weight:600; }
+
+  .hero { text-align:center; padding:60px 0 40px; }
+  .badge { display:inline-block; font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); border:1px solid var(--border); padding:6px 16px; border-radius:50px; margin-bottom:20px; background:rgba(226,183,97,0.05); }
+  .hero h1 { font-size:clamp(2.5rem, 5vw, 3.8rem); line-height:1.15; margin-bottom:20px; }
+  .hero h1 span { font-style:italic; color:var(--rose); }
+  .hero p { color:var(--muted); font-size:1.1rem; max-width:580px; margin:0 auto; }
+
+  .letter-card {
+    background:var(--card-bg);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:45px 35px;
+    margin:40px 0;
+    box-shadow:0 25px 50px rgba(0,0,0,0.5);
+  }
+  .letter-content p { font-size:1.12rem; margin-bottom:20px; color:var(--text); }
+  .letter-content p em { font-family:'Playfair Display', serif; font-size:1.2rem; color:var(--gold); }
+
+  .exam-box {
+    background: linear-gradient(135deg, #171412, #241918);
+    border: 1px solid var(--rose);
+    border-radius: 20px;
+    padding: 35px;
+    margin: 40px 0;
+    text-align: center;
+  }
+  .exam-box h3 { font-size: 1.5rem; color: var(--rose); margin-bottom: 10px; }
+  .exam-box p { color: var(--muted); font-size: 0.95rem; margin-bottom: 20px; }
+
+  .fun-box {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 35px;
+    margin: 40px 0;
+    text-align: center;
+  }
+  .fun-box h3 { font-size: 1.4rem; color: var(--gold); margin-bottom: 10px; }
+  .fun-box p { color: var(--muted); font-size: 0.95rem; margin-bottom: 20px; }
+  .fun-btn-grid { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .btn-fun {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 10px 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+  }
+  .btn-fun:hover { border-color: var(--rose); color: var(--rose); transform: translateY(-2px); }
+  .fun-output {
+    margin-top: 20px;
+    font-style: italic;
+    color: var(--rose);
+    font-size: 1.05rem;
+    min-height: 40px;
+    padding: 0 15px;
+  }
+
+  .distance-box {
+    text-align:center;
+    background:linear-gradient(135deg, #171412, #201a17);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:35px 24px;
+    margin:40px 0;
+  }
+  .distance-box h3 { font-size:1.5rem; margin-bottom:10px; color:var(--gold); }
+  .distance-box p { color:var(--muted); font-size:0.95rem; margin-bottom:20px; }
+  .countdown-grid { display:flex; justify-content:center; gap:15px; margin-top:20px; }
+  .time-block { background:var(--bg); border:1px solid var(--border); padding:12px 18px; border-radius:10px; min-width:75px; }
+  .time-block span { display:block; font-size:1.5rem; font-family:'Playfair Display', serif; color:var(--rose); font-weight:600; }
+  .time-block label { font-size:0.7rem; text-transform:uppercase; color:var(--muted); letter-spacing:0.1em; }
+
+  .question-section { text-align:center; padding:40px 0; }
+  .question-section h2 { font-size:2rem; margin-bottom:25px; }
+  .btn-group { display:flex; justify-content:center; gap:15px; flex-wrap:wrap; }
+  .btn {
+    padding:14px 32px;
+    border-radius:50px;
+    font-size:1rem;
+    cursor:pointer;
+    font-family:inherit;
+    font-weight:500;
+    transition:all 0.2s ease;
+    border:none;
+  }
+  .btn-yes { background:var(--rose); color:#fff; box-shadow:0 10px 20px rgba(224,86,109,0.3); }
+  .btn-yes:hover { transform:translateY(-2px); filter:brightness(1.1); }
+  .btn-no { background:transparent; border:1px solid var(--border); color:var(--muted); position:relative; }
+
+  #loveAccepted { display:none; text-align:center; padding:30px 0; animation: fadeIn 0.8s ease; }
+  #loveAccepted h2 { font-size:2.2rem; color:var(--rose); margin-bottom:15px; }
+  #loveAccepted p { font-size:1.1rem; color:var(--muted); margin-bottom:20px; }
+  .date-options { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+  @keyframes fadeIn { from{opacity:0; transform:translateY(15px);} to{opacity:1; transform:translateY(0);} }
+
+  .message-form-container {
+    background:var(--card-bg);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:40px 35px;
+    margin-top:40px;
+  }
+  .message-form-container h3 { font-size:1.6rem; margin-bottom:8px; text-align:center; color:var(--gold); }
+  .message-form-container p { text-align:center; color:var(--muted); font-size:0.92rem; margin-bottom:30px; }
+  .form-field { margin-bottom:20px; }
+  .form-field label { display:block; font-size:0.85rem; color:var(--muted); margin-bottom:8px; text-transform:uppercase; letter-spacing:0.05em; }
+  .input-control {
+    width:100%;
+    padding:14px 18px;
+    background:var(--bg);
+    border:1px solid var(--border);
+    border-radius:10px;
+    color:var(--text);
+    font-family:inherit;
+    font-size:1rem;
+  }
+  .input-control:focus { outline:none; border-color:var(--rose); }
+  textarea.input-control { resize:vertical; min-height:120px; }
+  .btn-submit { width:100%; background:var(--gold); color:#000; font-weight:600; margin-top:10px; cursor:pointer; }
+  .btn-submit:hover { filter:brightness(1.05); transform:translateY(-1px); }
+
+  footer { text-align:center; padding:40px 0 20px; color:var(--border); font-size:0.85rem; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="badge">A Connection Without Borders 👻💖</div>
+    <h1>For Sintia, <span>across the map.</span></h1>
+    <p>Crushing your exams and conquering the distance all at once.</p>
+  </header>
+
+  <div class="letter-card">
+    <div class="letter-content">
+      <p>Dear Sintia 👻,</p>
+      <p>I know you have exams right now, and while you're busy brilliant-minding your way through them across the map, I wanted to send you something to remind you how amazing you are 💖.</p>
+      <p>Even with miles between us and books stacked high on your desk, you occupy the absolute best parts of my thoughts. Go ace those exams—I'm rooting for you completely!</p>
+      <p>And remember: once you conquer them, mark your calendar for <em>this coming Tuesday, the 28th</em>, when we get to celebrate properly.</p>
+    </div>
+  </div>
+
+  <div class="exam-box">
+    <h3>📚 Exam Mode: Activated! 👻</h3>
+    <p>Take a tiny study break and tap below for a quick boost of confidence and love.</p>
+    <div class="fun-btn-grid">
+      <button class="btn-fun" onclick="showExamCheer(1)">Exam Encouragement ✨</button>
+      <button class="btn-fun" onclick="showExamCheer(2)">Study Ghost Energy 👻</button>
+      <button class="btn-fun" onclick="showExamCheer(3)">After Exam Reward 🥂</button>
+    </div>
+    <div class="fun-output" id="examOutput">Click a button for a sweet study boost!</div>
+  </div>
+
+  <div class="distance-box">
+    <h3>Counting down to Tuesday, the 28th ⏳</h3>
+    <p>Right after your exams, a special date reserved just for us.</p>
+    <div class="countdown-grid" id="countdown">
+      <div class="time-block"><span id="days">00</span><label>Days</label></div>
+      <div class="time-block"><span id="hours">00</span><label>Hours</label></div>
+      <div class="time-block"><span id="mins">00</span><label>Mins</label></div>
+      <div class="time-block"><span id="secs">00</span><label>Secs</label></div>
+    </div>
+  </div>
+
+  <div class="question-section" id="questionArea">
+    <h2>Sintia, will you be mine? 👻💖</h2>
+    <div class="btn-group">
+      <button class="btn btn-yes" onclick="sayYes()">Yes, absolutely! 💖</button>
+      <button class="btn btn-no" id="noBtn" onmouseover="dodgeNo()" onclick="dodgeNo()">Let me think...</button>
+    </div>
+  </div>
+
+  <div id="loveAccepted">
+    <h2>✨ My Heart is Overflowing 👻💖 ✨</h2>
+    <p>You just made me the happiest person alive! Tuesday the 28th is officially locked in. How should we celebrate your exam freedom?</p>
+    <div class="date-options">
+      <button class="btn btn-fun" onclick="pickVirtualDate('Long-Distance Movie Sync 🍿')">Movie Sync 🍿</button>
+      <button class="btn btn-fun" onclick="pickVirtualDate('Late Night FaceTime Call 🌙')">FaceTime Date 🌙</button>
+      <button class="btn btn-fun" onclick="pickVirtualDate('Virtual Celebration Drinks 🍷')">Virtual Party 🍷</button>
+    </div>
+    <p id="selectedDateResult" style="margin-top: 20px; font-weight: 600; color: var(--gold);"></p>
+  </div>
+
+  <div class="message-form-container">
+    <h3>Send a Note to My Heart 💌</h3>
+    <p>Type your thoughts right here. When you hit send, it flies straight to my inbox across the miles.</p>
+    
+    <form action="https://formspree.io/f/mqergnwk" method="POST">
+      <div class="form-field">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" class="input-control" value="Sintia 👻" readonly>
+      </div>
+      <div class="form-field">
+        <label for="message">Your Message / Exam Update</label>
+        <textarea id="message" name="message" class="input-control" placeholder="Tell me how your exams went or send a cute note back..."></textarea>
+      </div>
+      <button type="submit" class="btn btn-submit">Send Across the Miles 🚀</button>
+    </form>
+  </div>
+
+  <footer>
+    Made with all my heart, across every border. 👻💖
+  </footer>
+</div>
+
+<script>
+  function showExamCheer(type) {
+    const output = document.getElementById('examOutput');
+    if(type === 1) {
+      output.textContent = `"You are brilliant, capable, and going to crush these exams. Take a deep breath—you've got this!"`;
+    } else if(type === 2) {
+      output.textContent = `"Sending a friendly ghost 👻 to haunt your desk and whisper correct answers into your mind!"`;
+    } else if(type === 3) {
+      output.textContent = `"The moment your exams are finished, Tuesday the 28th is waiting for us to celebrate!"`;
+    }
+  }
+
+  function sayYes() {
+    document.getElementById('questionArea').style.display = 'none';
+    document.getElementById('loveAccepted').style.display = 'block';
+    document.getElementById('message').value = "I said YES! 👻💖 Exams are almost done and I can't wait for Tuesday the 28th!";
+  }
+
+  function pickVirtualDate(dateType) {
+    document.getElementById('selectedDateResult').textContent = `Awesome! Our celebration date is locked in: ${dateType} ✨`;
+    document.getElementById('message').value = `I said YES! Exams are conquered and I picked: ${dateType} 👻💖`;
+  }
+
+  function dodgeNo() {
+    const btn = document.getElementById('noBtn');
+    const x = (Math.random() - 0.5) * 180;
+    const y = (Math.random() - 0.5) * 80;
+    btn.style.transform = `translate(${x}px, ${y}px)`;
+  }
+
+  function updateCountdown() {
+    const now = new Date();
+    let targetYear = now.getFullYear();
+    let targetMonth = now.getMonth();
+    
+    let targetDate = new Date(targetYear, targetMonth, 28, 20, 0, 0);
+    if (now > targetDate) {
+      targetDate = new Date(targetYear, targetMonth + 1, 28, 20, 0, 0);
+    }
+
+    const diff = targetDate - now;
+    if (diff > 0) {
+      document.getElementById('days').textContent = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(2, '0');
+      document.getElementById('hours').textContent = String(Math.floor((diff / (1000 * 60 * 60)) % 24)).padStart(2, '0');
+      document.getElementById('mins').textContent = String(Math.floor((diff / 1000 / 60) % 60)).padStart(2, '0');
+      document.getElementById('secs').textContent = String(Math.floor((diff / 1000) % 60)).padStart(2, '0');
+    }
+  }
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
+</script>
+
+</body>
+</html>
