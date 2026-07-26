@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Sintia 👻💖 — You've Got This!</title>
+<title>Happy Birthday Sintia 👻💖</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
 
@@ -27,7 +27,7 @@
     overflow-x:hidden;
   }
   
-  .wrap{ max-width:750px; margin:0 auto; padding:40px 24px; }
+  .wrap{ max-width:750px; margin:0 auto; padding:40px 24px; position:relative; }
   h1, h2, h3 { font-family:'Playfair Display', serif; font-weight:600; }
 
   .hero { text-align:center; padding:60px 0 40px; }
@@ -47,9 +47,52 @@
   .letter-content p { font-size:1.12rem; margin-bottom:20px; color:var(--text); }
   .letter-content p em { font-family:'Playfair Display', serif; font-size:1.2rem; color:var(--gold); }
 
-  .exam-box {
+  /* Birthday Surprise Box */
+  .bday-box {
     background: linear-gradient(135deg, #171412, #241918);
-    border: 1px solid var(--rose);
+    border: 1px solid var(--gold);
+    border-radius: 20px;
+    padding: 40px 35px;
+    margin: 40px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .bday-box h3 { font-size: 1.8rem; color: var(--gold); margin-bottom: 15px; }
+  .bday-box p { color: var(--muted); font-size: 1rem; margin-bottom: 25px; }
+  
+  .btn-bday {
+    background: var(--gold);
+    color: #000;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s;
+    box-shadow: 0 10px 20px rgba(226,183,97,0.2);
+  }
+  .btn-bday:hover { transform: translateY(-2px); filter: brightness(1.1); }
+
+  #bdayMessage {
+    display: none;
+    margin-top: 25px;
+    padding: 25px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    animation: fadeIn 0.8s ease;
+    text-align: left;
+  }
+  #bdayMessage p { color: var(--text); font-size: 1.05rem; margin-bottom: 15px; line-height: 1.8; }
+  #bdayMessage p:last-child { margin-bottom: 0; }
+
+  /* Exam Box */
+  .exam-box {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
     border-radius: 20px;
     padding: 35px;
     margin: 40px 0;
@@ -58,16 +101,6 @@
   .exam-box h3 { font-size: 1.5rem; color: var(--rose); margin-bottom: 10px; }
   .exam-box p { color: var(--muted); font-size: 0.95rem; margin-bottom: 20px; }
 
-  .fun-box {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 35px;
-    margin: 40px 0;
-    text-align: center;
-  }
-  .fun-box h3 { font-size: 1.4rem; color: var(--gold); margin-bottom: 10px; }
-  .fun-box p { color: var(--muted); font-size: 0.95rem; margin-bottom: 20px; }
   .fun-btn-grid { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
   .btn-fun {
     background: var(--bg);
@@ -89,42 +122,24 @@
     padding: 0 15px;
   }
 
-  .distance-box {
-    text-align:center;
-    background:linear-gradient(135deg, #171412, #201a17);
-    border:1px solid var(--border);
-    border-radius:16px;
-    padding:35px 24px;
-    margin:40px 0;
+  /* Balloon Animation Elements */
+  .balloon-container {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    display: none;
   }
-  .distance-box h3 { font-size:1.5rem; margin-bottom:10px; color:var(--gold); }
-  .distance-box p { color:var(--muted); font-size:0.95rem; margin-bottom:20px; }
-  .countdown-grid { display:flex; justify-content:center; gap:15px; margin-top:20px; }
-  .time-block { background:var(--bg); border:1px solid var(--border); padding:12px 18px; border-radius:10px; min-width:75px; }
-  .time-block span { display:block; font-size:1.5rem; font-family:'Playfair Display', serif; color:var(--rose); font-weight:600; }
-  .time-block label { font-size:0.7rem; text-transform:uppercase; color:var(--muted); letter-spacing:0.1em; }
-
-  .question-section { text-align:center; padding:40px 0; }
-  .question-section h2 { font-size:2rem; margin-bottom:25px; }
-  .btn-group { display:flex; justify-content:center; gap:15px; flex-wrap:wrap; }
-  .btn {
-    padding:14px 32px;
-    border-radius:50px;
-    font-size:1rem;
-    cursor:pointer;
-    font-family:inherit;
-    font-weight:500;
-    transition:all 0.2s ease;
-    border:none;
+  .balloon {
+    position: absolute;
+    bottom: -100px;
+    font-size: 2rem;
+    animation: floatUp 4s linear infinite;
   }
-  .btn-yes { background:var(--rose); color:#fff; box-shadow:0 10px 20px rgba(224,86,109,0.3); }
-  .btn-yes:hover { transform:translateY(-2px); filter:brightness(1.1); }
-  .btn-no { background:transparent; border:1px solid var(--border); color:var(--muted); position:relative; }
-
-  #loveAccepted { display:none; text-align:center; padding:30px 0; animation: fadeIn 0.8s ease; }
-  #loveAccepted h2 { font-size:2.2rem; color:var(--rose); margin-bottom:15px; }
-  #loveAccepted p { font-size:1.1rem; color:var(--muted); margin-bottom:20px; }
-  .date-options { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+  @keyframes floatUp {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-600px) rotate(20deg); opacity: 0; }
+  }
   @keyframes fadeIn { from{opacity:0; transform:translateY(15px);} to{opacity:1; transform:translateY(0);} }
 
   .message-form-container {
@@ -160,61 +175,48 @@
 
 <div class="wrap">
   <header class="hero">
-    <div class="badge">A Connection Without Borders 👻💖</div>
+    <div class="badge">Happy Birthday, Sintia 👻💖</div>
     <h1>For Sintia, <span>across the map.</span></h1>
-    <p>Crushing your exams and conquering the distance all at once.</p>
+    <p>Crushing your exams, aging with incredible grace, and bringing pure joy into my life.</p>
   </header>
 
+  <!-- Letter Card -->
   <div class="letter-card">
     <div class="letter-content">
       <p>Dear Sintia 👻,</p>
-      <p>I know you have exams right now, and while you're busy brilliant-minding your way through them across the map, I wanted to send you something to remind you how amazing you are 💖.</p>
-      <p>Even with miles between us and books stacked high on your desk, you occupy the absolute best parts of my thoughts. Go ace those exams—I'm rooting for you completely!</p>
-      <p>And remember: once you conquer them, mark your calendar for <em>this coming Tuesday, the 28th</em>, when we get to celebrate properly.</p>
+      <p>I know you have exams right now, and while you're busy brilliant-minding your way through them across the map, today is all about celebrating *you* 💖.</p>
+      <p>Even though we haven't known each other for very long physically, it genuinely feels like I have known you for a lifetime. You've become so special to me in such a short space of time.</p>
     </div>
   </div>
 
+  <!-- Interactive Birthday Surprise Box -->
+  <div class="bday-box" id="bdayContainer">
+    <div class="balloon-container" id="balloonContainer"></div>
+    <h3>🎉 Tap for Your Birthday Surprise! 🎂</h3>
+    <p>Click the button below to unlock your special blessing and celebration balloons across the miles.</p>
+    <button class="btn-bday" onclick="revealBirthday()">Pop Open Your Surprise! 🎈</button>
+    
+    <div id="bdayMessage">
+      <p><strong>Happy Birthday, Sintia! 👻💖</strong></p>
+      <p>You are such an incredible blessing in my life. Your presence, your energy, and the way you carry yourself mean more to me than words can say.</p>
+      <p>May you continue to age with so much grace, beauty, and wisdom. May this new year of your life bring you endless peace, success in everything you touch, and happiness that overflows across borders.</p>
+      <p>Even though we are miles apart, please know you are deeply cherished today and always. Have the most wonderful birthday!</p>
+    </div>
+  </div>
+
+  <!-- Exam Boost Box -->
   <div class="exam-box">
-    <h3>📚 Exam Mode: Activated! 👻</h3>
-    <p>Take a tiny study break and tap below for a quick boost of confidence and love.</p>
+    <h3>📚 Exam Mode & Study Break 👻</h3>
+    <p>Take a tiny study break and tap below for a quick boost of confidence.</p>
     <div class="fun-btn-grid">
       <button class="btn-fun" onclick="showExamCheer(1)">Exam Encouragement ✨</button>
       <button class="btn-fun" onclick="showExamCheer(2)">Study Ghost Energy 👻</button>
-      <button class="btn-fun" onclick="showExamCheer(3)">After Exam Reward 🥂</button>
+      <button class="btn-fun" onclick="showExamCheer(3)">After Exam Birthday Celebration 🥂</button>
     </div>
     <div class="fun-output" id="examOutput">Click a button for a sweet study boost!</div>
   </div>
 
-  <div class="distance-box">
-    <h3>Counting down to Tuesday, the 28th ⏳</h3>
-    <p>Right after your exams, a special date reserved just for us.</p>
-    <div class="countdown-grid" id="countdown">
-      <div class="time-block"><span id="days">00</span><label>Days</label></div>
-      <div class="time-block"><span id="hours">00</span><label>Hours</label></div>
-      <div class="time-block"><span id="mins">00</span><label>Mins</label></div>
-      <div class="time-block"><span id="secs">00</span><label>Secs</label></div>
-    </div>
-  </div>
-
-  <div class="question-section" id="questionArea">
-    <h2>Sintia, will you be mine? 👻💖</h2>
-    <div class="btn-group">
-      <button class="btn btn-yes" onclick="sayYes()">Yes, absolutely! 💖</button>
-      <button class="btn btn-no" id="noBtn" onmouseover="dodgeNo()" onclick="dodgeNo()">Let me think...</button>
-    </div>
-  </div>
-
-  <div id="loveAccepted">
-    <h2>✨ My Heart is Overflowing 👻💖 ✨</h2>
-    <p>You just made me the happiest person alive! Tuesday the 28th is officially locked in. How should we celebrate your exam freedom?</p>
-    <div class="date-options">
-      <button class="btn btn-fun" onclick="pickVirtualDate('Long-Distance Movie Sync 🍿')">Movie Sync 🍿</button>
-      <button class="btn btn-fun" onclick="pickVirtualDate('Late Night FaceTime Call 🌙')">FaceTime Date 🌙</button>
-      <button class="btn btn-fun" onclick="pickVirtualDate('Virtual Celebration Drinks 🍷')">Virtual Party 🍷</button>
-    </div>
-    <p id="selectedDateResult" style="margin-top: 20px; font-weight: 600; color: var(--gold);"></p>
-  </div>
-
+  <!-- Messaging Form Section -->
   <div class="message-form-container">
     <h3>Send a Note to My Heart 💌</h3>
     <p>Type your thoughts right here. When you hit send, it flies straight to my inbox across the miles.</p>
@@ -225,8 +227,8 @@
         <input type="text" id="name" name="name" class="input-control" value="Sintia 👻" readonly>
       </div>
       <div class="form-field">
-        <label for="message">Your Message / Exam Update</label>
-        <textarea id="message" name="message" class="input-control" placeholder="Tell me how your exams went or send a cute note back..."></textarea>
+        <label for="message">Your Birthday Note / Exam Update</label>
+        <textarea id="message" name="message" class="input-control" placeholder="Tell me how your birthday and exams went..."></textarea>
       </div>
       <button type="submit" class="btn btn-submit">Send Across the Miles 🚀</button>
     </form>
@@ -238,55 +240,35 @@
 </div>
 
 <script>
+  function revealBirthday() {
+    document.getElementById('bdayMessage').style.display = 'block';
+    const balloonBox = document.getElementById('balloonContainer');
+    balloonBox.style.display = 'block';
+    balloonBox.innerHTML = '';
+
+    // Generate floating birthday balloons and hearts
+    const symbols = ['🎈', '💖', '👻', '✨', '🎂', '🎉'];
+    for (let i = 0; i < 20; i++) {
+      const span = document.createElement('span');
+      span.className = 'balloon';
+      span.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+      span.style.left = Math.random() * 90 + '%';
+      span.style.animationDuration = (3 + Math.random() * 2) + 's';
+      span.style.animationDelay = (Math.random() * 0.5) + 's';
+      balloonBox.appendChild(span);
+    }
+  }
+
   function showExamCheer(type) {
     const output = document.getElementById('examOutput');
     if(type === 1) {
-      output.textContent = `"You are brilliant, capable, and going to crush these exams. Take a deep breath—you've got this!"`;
+      output.textContent = `"You are brilliant, capable, and going to crush these exams while looking gorgeous doing it!"`;
     } else if(type === 2) {
       output.textContent = `"Sending a friendly ghost 👻 to haunt your desk and whisper correct answers into your mind!"`;
     } else if(type === 3) {
-      output.textContent = `"The moment your exams are finished, Tuesday the 28th is waiting for us to celebrate!"`;
+      output.textContent = `"The moment your exams are finished, we are celebrating your birthday properly!"`;
     }
   }
-
-  function sayYes() {
-    document.getElementById('questionArea').style.display = 'none';
-    document.getElementById('loveAccepted').style.display = 'block';
-    document.getElementById('message').value = "I said YES! 👻💖 Exams are almost done and I can't wait for Tuesday the 28th!";
-  }
-
-  function pickVirtualDate(dateType) {
-    document.getElementById('selectedDateResult').textContent = `Awesome! Our celebration date is locked in: ${dateType} ✨`;
-    document.getElementById('message').value = `I said YES! Exams are conquered and I picked: ${dateType} 👻💖`;
-  }
-
-  function dodgeNo() {
-    const btn = document.getElementById('noBtn');
-    const x = (Math.random() - 0.5) * 180;
-    const y = (Math.random() - 0.5) * 80;
-    btn.style.transform = `translate(${x}px, ${y}px)`;
-  }
-
-  function updateCountdown() {
-    const now = new Date();
-    let targetYear = now.getFullYear();
-    let targetMonth = now.getMonth();
-    
-    let targetDate = new Date(targetYear, targetMonth, 28, 20, 0, 0);
-    if (now > targetDate) {
-      targetDate = new Date(targetYear, targetMonth + 1, 28, 20, 0, 0);
-    }
-
-    const diff = targetDate - now;
-    if (diff > 0) {
-      document.getElementById('days').textContent = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(2, '0');
-      document.getElementById('hours').textContent = String(Math.floor((diff / (1000 * 60 * 60)) % 24)).padStart(2, '0');
-      document.getElementById('mins').textContent = String(Math.floor((diff / 1000 / 60) % 60)).padStart(2, '0');
-      document.getElementById('secs').textContent = String(Math.floor((diff / 1000) % 60)).padStart(2, '0');
-    }
-  }
-  setInterval(updateCountdown, 1000);
-  updateCountdown();
 </script>
 
 </body>
